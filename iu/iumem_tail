@@ -1,0 +1,7 @@
+);
+
+begin
+
+    iuimem_do_out <= inst_rom(to_integer(unsigned(iuimem_addr_in)));
+
+end rtl;

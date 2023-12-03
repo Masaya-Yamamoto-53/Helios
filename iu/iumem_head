@@ -1,0 +1,17 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity iuimem is
+    port (
+        iuimem_addr_in  : in    std_logic_vector( 8 downto 0);
+        iuimem_do_out   :   out std_logic_vector(31 downto 0)
+    );
+end iuimem;
+
+architecture rtl of iuimem is
+
+subtype dword_t is std_logic_vector (31 downto 0);
+type rom_t is array (0 to 511) of dword_t;
+
+signal inst_rom : rom_t := (
