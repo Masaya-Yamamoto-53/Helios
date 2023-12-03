@@ -1,3 +1,10 @@
+--------------------------------------------------------------------------------
+-- Design Name: IU CALL Instruction Address Generator
+-- Description:
+-- It determines that it is a CALL instruction from the instruction format.
+-- In the case of a CALL instruction,
+-- it treats the lower 30 bits of the instruction code as a relative address.
+--------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
