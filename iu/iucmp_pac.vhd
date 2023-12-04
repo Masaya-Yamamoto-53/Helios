@@ -18,10 +18,6 @@ package iucmp_pac is
             iucmp_op_in  : in    std_logic_vector( 2 downto 0);
             iucmp_di1_in : in    std_logic_vector(31 downto 0);
             iucmp_di2_in : in    std_logic_vector(31 downto 0);
-            iucmp_n_out  :   out std_logic;
-            iucmp_z_out  :   out std_logic;
-            iucmp_v_out  :   out std_logic;
-            iucmp_c_out  :   out std_logic;
             iucmp_do_out :   out std_logic
         );
     end component;

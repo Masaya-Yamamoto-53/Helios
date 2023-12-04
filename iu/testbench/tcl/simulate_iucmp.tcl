@@ -10,9 +10,10 @@ set testbench_name "iucmp_test"
 create_project -force  $project_name -part $part_number
 
 # Add Files
-add_files ../iucmp.vhd
-add_files ../iucmp_pac.vhd
 add_files ../iucc_pac.vhd
+add_files ../iucc.vhd
+add_files ../iucmp_pac.vhd
+add_files ../iucmp.vhd
 add_files ./vhd/iucmp_test.vhd
 
 # Settings

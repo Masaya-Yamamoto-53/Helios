@@ -86,7 +86,7 @@ begin
             if (iucmp_do_out /= do_sig ) then
                 write (lo, str_failure);
                 write (lo, str_separate);
-                write (lo, do_sig);
+                write (lo, iucmp_do_out);
             else
                 write (lo, str_pass);
             end if;

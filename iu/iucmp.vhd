@@ -11,10 +11,6 @@ entity iucmp is
         iucmp_op_in  : in    std_logic_vector( 2 downto 0);
         iucmp_di1_in : in    std_logic_vector(31 downto 0);
         iucmp_di2_in : in    std_logic_vector(31 downto 0);
-        iucmp_n_out  :   out std_logic;
-        iucmp_z_out  :   out std_logic;
-        iucmp_v_out  :   out std_logic;
-        iucmp_c_out  :   out std_logic;
         iucmp_do_out :   out std_logic
     );
 end iucmp;
@@ -61,7 +57,6 @@ begin
     beq_sig  <= '1' when (cond_sig = IUCMP_OP_CMPEQ ) and ( z_sig = '1'                      ) else '0';
     blt_sig  <= '1' when (cond_sig = IUCMP_OP_CMPLT ) and (          (n_sig xor v_sig)  = '1') else '0';
     ble_sig  <= '1' when (cond_sig = IUCMP_OP_CMPLE ) and ((z_sig or (n_sig xor v_sig)) = '1') else '0';
-
     bneq_sig <= '1' when (cond_sig = IUCMP_OP_CMPNEQ) and ( z_sig = '0'                      ) else '0';
     bltu_sig <= '1' when (cond_sig = IUCMP_OP_CMPLTU) and ( c_sig = '1'                      ) else '0';
     bleu_sig <= '1' when (cond_sig = IUCMP_OP_CMPLEU) and ((c_sig = '1') or (z_sig = '1')    ) else '0';
@@ -73,10 +68,6 @@ begin
            or bltu_sig
            or bleu_sig;
 
-    iucmp_n_out  <= n_sig  and iucmp_cs_in;
-    iucmp_z_out  <= z_sig  and iucmp_cs_in;
-    iucmp_v_out  <= v_sig  and iucmp_cs_in;
-    iucmp_c_out  <= c_sig  and iucmp_cs_in;
     iucmp_do_out <= do_sig and iucmp_cs_in;
 
 end rtl;
