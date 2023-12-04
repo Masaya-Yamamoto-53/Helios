@@ -80,6 +80,8 @@ begin
 
             if (iucond_do_out /= do_sig ) then
                 write (lo, str_failure);
+                write (lo, str_separate);
+                write (lo, iucond_do_out);
             else
                 write (lo, str_pass);
             end if;
