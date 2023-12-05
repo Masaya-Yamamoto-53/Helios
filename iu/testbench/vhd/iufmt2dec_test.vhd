@@ -88,6 +88,7 @@ begin
             -- result
             read (li, do_sig.rs1_sel  );
             read (li, do_sig.rs2_sel  );
+            read (li, do_sig.rs3_sel  );
 
             read (li, do_sig.imm_data );
             read (li, do_sig.sethi    );
@@ -107,11 +108,19 @@ begin
             read (li, do_sig.rd_sel   );
 
             read (li, do_sig.branch   );
+            read (li, do_sig.rett     );
+
+            read (li, do_sig.psr_read );
+            read (li, do_sig.s_we     );
+            read (li, do_sig.et_we    );
+            read (li, do_sig.pil_we   );
 
             read (li, do_sig.mem_read );
             read (li, do_sig.mem_write);
             read (li, do_sig.mem_sign );
             read (li, do_sig.mem_type );
+
+            read (li, do_sig.inst_a   );
 
             read (li, do_sig.unimp    );
 
@@ -146,10 +155,16 @@ begin
             or  (iufmt2dec_do_out.rd_we     /= do_sig.rd_we    )
             or  (iufmt2dec_do_out.rd_sel    /= do_sig.rd_sel   )
             or  (iufmt2dec_do_out.branch    /= do_sig.branch   )
+            or  (iufmt2dec_do_out.rett      /= do_sig.rett     )
+            or  (iufmt2dec_do_out.psr_read  /= do_sig.psr_read )
+            or  (iufmt2dec_do_out.s_we      /= do_sig.s_we     )
+            or  (iufmt2dec_do_out.et_we     /= do_sig.et_we    )
+            or  (iufmt2dec_do_out.pil_we    /= do_sig.pil_we   )
             or  (iufmt2dec_do_out.mem_read  /= do_sig.mem_read )
             or  (iufmt2dec_do_out.mem_write /= do_sig.mem_write)
             or  (iufmt2dec_do_out.mem_sign  /= do_sig.mem_sign )
             or  (iufmt2dec_do_out.mem_type  /= do_sig.mem_type )
+            or  (iufmt2dec_do_out.inst_a    /= do_sig.inst_a   )
             or  (iufmt2dec_do_out.unimp     /= do_sig.unimp    )) then
                 write (lo, str_failure);
                 write (lo, str_separate);
@@ -185,6 +200,16 @@ begin
                 write (lo, str_separate);
                 write (lo, iufmt2dec_do_out.branch   );
                 write (lo, str_separate);
+                write (lo, iufmt2dec_do_out.rett     );
+                write (lo, str_separate);
+                write (lo, iufmt2dec_do_out.psr_read );
+                write (lo, str_separate);
+                write (lo, iufmt2dec_do_out.s_we     );
+                write (lo, str_separate);
+                write (lo, iufmt2dec_do_out.et_we    );
+                write (lo, str_separate);
+                write (lo, iufmt2dec_do_out.pil_we   );
+                write (lo, str_separate);
                 write (lo, iufmt2dec_do_out.mem_read );
                 write (lo, str_separate);
                 write (lo, iufmt2dec_do_out.mem_write);
@@ -192,6 +217,8 @@ begin
                 write (lo, iufmt2dec_do_out.mem_sign );
                 write (lo, str_separate);
                 write (lo, iufmt2dec_do_out.mem_type );
+                write (lo, str_separate);
+                write (lo, iufmt2dec_do_out.inst_a   );
                 write (lo, str_separate);
                 write (lo, iufmt2dec_do_out.unimp    );
             else
