@@ -10,9 +10,10 @@ set testbench_name "iufwpreu_test"
 create_project -force  $project_name -part $part_number
 
 # Add Files
-add_files ../iufwpreu.vhd
 add_files ../iu_pac.vhd
 add_files ../iufwu_pac.vhd
+add_files ../iufwpre.vhd
+add_files ../iufwpreu.vhd
 add_files ./vhd/iufwpreu_test.vhd
 
 # Settings

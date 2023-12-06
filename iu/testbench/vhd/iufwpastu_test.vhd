@@ -109,9 +109,9 @@ begin
             read(li, wb_rd_sig.data);
 
             -- result
-            read (li, rs1_do_sig   );
-            read (li, rs2_do_sig   );
-            read (li, rs3_do_sig   );
+            read(li, rs1_do_sig   );
+            read(li, rs2_do_sig   );
+            read(li, rs3_do_sig   );
 
             iufwpastu_rs1_fw_in <= rs1_fw_sig;
             iufwpastu_rs1_di_in <= rs1_di_sig;

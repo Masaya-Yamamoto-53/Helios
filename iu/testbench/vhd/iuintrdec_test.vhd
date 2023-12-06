@@ -47,8 +47,11 @@ begin
         variable no_sig : integer := 0;
 
         -- input signal
-        variable cs_sig      : std_logic;
-        variable di_sig      : std_logic_vector (8 downto 0);
+        variable cs_sig    : std_logic;
+        variable irl_sig   : std_logic_vector (3 downto 0);
+        variable excep_sig : std_logic;
+        variable rett_sig  : std_logic;
+        variable phase_sig : std_logic_vector (2 downto 0);
 
         -- output signal
         variable do_sig      : st_iuctrl_if;
@@ -58,7 +61,11 @@ begin
             -- input data
             readline (fin, li);
             read (li, cs_sig);
-            read (li, di_sig);
+
+            read (li, irl_sig  );
+            read (li, excep_sig);
+            read (li, rett_sig );
+            read (li, phase_sig);
 
             -- result
             read (li, do_sig.rs1_sel  );
@@ -83,16 +90,25 @@ begin
             read (li, do_sig.rd_sel   );
 
             read (li, do_sig.branch   );
+            read (li, do_sig.rett     );
+
+            read (li, do_sig.psr_read );
+            read (li, do_sig.s_we     );
+            read (li, do_sig.et_we    );
+            read (li, do_sig.pil_we   );
 
             read (li, do_sig.mem_read );
             read (li, do_sig.mem_write);
             read (li, do_sig.mem_sign );
             read (li, do_sig.mem_type );
 
-            read (li, do_sig.unimp );
+            read (li, do_sig.inst_a   );
+
+            read (li, do_sig.unimp    );
 
             iuintrdec_cs_in <= cs_sig;
-            iuintrdec_di_in <= di_sig;
+            iuintrdec_di_in <= irl_sig & excep_sig & rett_sig & phase_sig;
+
 
             wait for 10 ns;
 
@@ -117,10 +133,16 @@ begin
             or  (iuintrdec_do_out.rd_we     /= do_sig.rd_we    )
             or  (iuintrdec_do_out.rd_sel    /= do_sig.rd_sel   )
             or  (iuintrdec_do_out.branch    /= do_sig.branch   )
+            or  (iuintrdec_do_out.rett      /= do_sig.rett     )
+            or  (iuintrdec_do_out.psr_read  /= do_sig.psr_read )
+            or  (iuintrdec_do_out.s_we      /= do_sig.s_we     )
+            or  (iuintrdec_do_out.et_we     /= do_sig.et_we    )
+            or  (iuintrdec_do_out.pil_we    /= do_sig.pil_we   )
             or  (iuintrdec_do_out.mem_read  /= do_sig.mem_read )
             or  (iuintrdec_do_out.mem_write /= do_sig.mem_write)
             or  (iuintrdec_do_out.mem_sign  /= do_sig.mem_sign )
             or  (iuintrdec_do_out.mem_type  /= do_sig.mem_type )
+            or  (iuintrdec_do_out.inst_a    /= do_sig.inst_a   )
             or  (iuintrdec_do_out.unimp     /= do_sig.unimp    )) then
                 write (lo, str_failure);
                 write (lo, str_separate);
@@ -156,6 +178,16 @@ begin
                 write (lo, str_separate);
                 write (lo, iuintrdec_do_out.branch   );
                 write (lo, str_separate);
+                write (lo, iuintrdec_do_out.rett     );
+                write (lo, str_separate);
+                write (lo, iuintrdec_do_out.psr_read );
+                write (lo, str_separate);
+                write (lo, iuintrdec_do_out.s_we     );
+                write (lo, str_separate);
+                write (lo, iuintrdec_do_out.et_we    );
+                write (lo, str_separate);
+                write (lo, iuintrdec_do_out.pil_we   );
+                write (lo, str_separate);
                 write (lo, iuintrdec_do_out.mem_read );
                 write (lo, str_separate);
                 write (lo, iuintrdec_do_out.mem_write);
@@ -163,6 +195,8 @@ begin
                 write (lo, iuintrdec_do_out.mem_sign );
                 write (lo, str_separate);
                 write (lo, iuintrdec_do_out.mem_type );
+                write (lo, str_separate);
+                write (lo, iuintrdec_do_out.inst_a   );
                 write (lo, str_separate);
                 write (lo, iuintrdec_do_out.unimp    );
             else

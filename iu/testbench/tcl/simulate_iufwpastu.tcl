@@ -10,9 +10,10 @@ set testbench_name "iufwpastu_test"
 create_project -force  $project_name -part $part_number
 
 # Add Files
-add_files ../iufwpastu.vhd
 add_files ../iu_pac.vhd
 add_files ../iufwu_pac.vhd
+add_files ../iufwpast.vhd
+add_files ../iufwpastu.vhd
 add_files ./vhd/iufwpastu_test.vhd
 
 # Settings

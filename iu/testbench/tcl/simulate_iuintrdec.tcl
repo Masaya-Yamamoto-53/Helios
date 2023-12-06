@@ -10,13 +10,13 @@ set testbench_name "iuintrdec_test"
 create_project -force  $project_name -part $part_number
 
 # Add Files
-add_files ../iuintrdec.vhd
-add_files ../iuctrl_pac.vhd
 add_files ../iu_pac.vhd
 add_files ../iumawb_pac.vhd
 add_files ../iurf_pac.vhd
 add_files ../iualu_pac.vhd
 add_files ../iuldst_pac.vhd
+add_files ../iuctrl_pac.vhd
+add_files ../iuintrdec.vhd
 add_files ../iuintrdec_pac.vhd
 add_files ./vhd/iuintrdec_test.vhd
 
