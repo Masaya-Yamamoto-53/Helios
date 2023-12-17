@@ -1,3 +1,18 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 2023 Masaya Yamamoto
+-- Released under the MIT license.
+-- see https://opensource.org/licenses/MIT (ENG)
+-- see https://licenses.opensource.jp/MIT/MIT.html (JPN)
+--
+-- Design Name: IU Compare
+-- Description:
+--   * "000": CMPEQ  : Compare equal
+--   * "010": CMPLT  : Compare less than
+--   * "011": CMPLE  : Compare signed less than or equal
+--   * "100": CMPNEQ : Compare signed not equal 
+--   * "110": CMPLTU : Compare unsigned less than
+--   * "111": CMPLEU : Compare unsigned less than or equal
+--------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -54,10 +69,29 @@ begin
         iucc_c_out      => c_sig
     );
 
+    -- If A is     equal to B, then A minus B does     equal zero.
+    -- If A is not equal to B, then A minus B does not equal zero.
     beq_sig  <= '1' when (cond_sig = IUCMP_OP_CMPEQ ) and ( z_sig = '1'                      ) else '0';
+    bneq_sig <= '1' when (cond_sig = IUCMP_OP_CMPNEQ) and ( z_sig = '0'                      ) else '0';
+
+    -- Used for signed comparison operations.
+    --
+    -- If A is less than B, then A minus B is a negative number.
+    --
+    -- However, if there is an overflow, then A is greater than B.
+    --   Example) 127(0111 1111) - (-1)(1111 1111) = -128(  1000 0000)
+    --            The above result is a negative number and an overflow has ocurred.
+    --
+    -- if A minus B is not a negative value and an overflow has occurred, then A is less than B.
+    --   Example) -128(1000 0000) - 1(0000 0001) = -129(1 0111 1111)
+    --            The above result is not a negative number, but and overflow has occurred.
     blt_sig  <= '1' when (cond_sig = IUCMP_OP_CMPLT ) and (          (n_sig xor v_sig)  = '1') else '0';
     ble_sig  <= '1' when (cond_sig = IUCMP_OP_CMPLE ) and ((z_sig or (n_sig xor v_sig)) = '1') else '0';
-    bneq_sig <= '1' when (cond_sig = IUCMP_OP_CMPNEQ) and ( z_sig = '0'                      ) else '0';
+    
+    -- Used for unsigned comparison operations.
+    --
+    -- In the case of unsigned integers,
+    -- when a borrow occurs due to subtraction, the relationship A < B holds true.
     bltu_sig <= '1' when (cond_sig = IUCMP_OP_CMPLTU) and ( c_sig = '1'                      ) else '0';
     bleu_sig <= '1' when (cond_sig = IUCMP_OP_CMPLEU) and ((c_sig = '1') or (z_sig = '1')    ) else '0';
 
@@ -68,6 +102,8 @@ begin
            or bltu_sig
            or bleu_sig;
 
+    -- When 'cs' is 0, the input is set to 0 in the preceding stage, causing 'beq' to be true.
+    -- Therefore, we also guard with 'cs' at this point.
     iucmp_do_out <= do_sig and iucmp_cs_in;
 
 end rtl;

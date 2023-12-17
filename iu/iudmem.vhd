@@ -1,6 +1,16 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 2023 Masaya Yamamoto
+-- Released under the MIT license.
+-- see https://opensource.org/licenses/MIT (ENG)
+-- see https://licenses.opensource.jp/MIT/MIT.html (JPN)
+--
+-- Design Name: IU Data Memory
+--------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+
+use work.iu.all;
 
 entity iudmem is
     port (
@@ -17,7 +27,7 @@ end iudmem;
 architecture rtl of iudmem is
 
     subtype dword_t is std_logic_vector ( 7 downto 0);
-    type ram_t is array (0 to 255) of dword_t;
+    type ram_t is array (0 to IU_DATA_MEM_SIZE) of dword_t;
 
     signal ram0_reg : ram_t;
     signal ram1_reg : ram_t;
@@ -38,7 +48,7 @@ begin
     iudmem_addr_sig <= iudmem_addr_in and ( 7 downto 0 => iudmem_cs_in);
     iudmem_di_sig   <= iudmem_di_in   and (31 downto 0 => iudmem_cs_in);
 
-    process (
+    IU_Data_Memory : process (
         iudmem_cs_in,
         iudmem_clk_in,
         iudmem_we_sig,
@@ -63,7 +73,7 @@ begin
                 end if;
             end if;
         end if;
-    end process;
+    end process IU_Data_Memory;
 
     do_sig( 7 downto  0) <= ram3_reg(to_integer(unsigned(iudmem_addr_sig)));
     do_sig(15 downto  8) <= ram2_reg(to_integer(unsigned(iudmem_addr_sig)));

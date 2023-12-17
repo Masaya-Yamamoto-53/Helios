@@ -1,6 +1,13 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 2023 Masaya Yamamoto
+-- Released under the MIT license.
+-- see https://opensource.org/licenses/MIT (ENG)
+-- see https://licenses.opensource.jp/MIT/MIT.html (JPN)
+--
+-- Design Name: IU ID/EX Pipeline Register
+--------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
 
 use work.iuidex_pac.all;
 
@@ -21,7 +28,10 @@ architecture rtl of iuidex is
 
 begin
 
-    IDEX_Pipeline_Register_Rst : process (
+    -----------------------------------------------------------
+    -- IU ID/EX Pipeline Register with Reset                 --
+    -----------------------------------------------------------
+    IDEX_Pipeline_Register_with_Reset : process (
         iuidex_clk_in,
         iuidex_rst_in,
         iuidex_wen_in,
@@ -30,8 +40,7 @@ begin
     )
     begin
         if (iuidex_clk_in'event and iuidex_clk_in = '1') then
-            if ((iuidex_rst_in  = '1')
-             or (iuidex_flash_in = '1')) then
+            if ((iuidex_rst_in = '1') or (iuidex_flash_in = '1')) then
                 iuidex_reg.cond_cs   <= st_iuidex_if_INIT.cond_cs;
                 iuidex_reg.alu_cs    <= st_iuidex_if_INIT.alu_cs;
                 iuidex_reg.mul_cs    <= st_iuidex_if_INIT.mul_cs;
@@ -73,9 +82,12 @@ begin
                 end if;
             end if;
         end if;
-    end process IDEX_Pipeline_Register_Rst;
+    end process IDEX_Pipeline_Register_with_Reset;
 
-    IDEX_Pipeline_Register_NonRst : process (
+    -----------------------------------------------------------
+    -- IU ID/EX Pipeline Register without Reset              --
+    -----------------------------------------------------------
+    IDEX_Pipeline_Register_without_Reset : process (
         iuidex_clk_in,
         iuidex_wen_in,
         iuidex_di_in
@@ -83,21 +95,21 @@ begin
     begin
         if (iuidex_clk_in'event and iuidex_clk_in = '1') then
             if (iuidex_wen_in = '0') then
-                iuidex_reg.rs1_data  <= iuidex_di_in.rs1_data;
-                iuidex_reg.rs1_fw    <= iuidex_di_in.rs1_fw;
-                iuidex_reg.rs2_data  <= iuidex_di_in.rs2_data;
-                iuidex_reg.rs2_fw    <= iuidex_di_in.rs2_fw;
-                iuidex_reg.rs3_data  <= iuidex_di_in.rs3_data;
-                iuidex_reg.rs3_fw    <= iuidex_di_in.rs3_fw;
-                iuidex_reg.opecode   <= iuidex_di_in.opecode;
-                iuidex_reg.cond      <= iuidex_di_in.cond;
-                iuidex_reg.rd_sel    <= iuidex_di_in.rd_sel;
-                iuidex_reg.pc        <= iuidex_di_in.pc;
-                iuidex_reg.mem_sign  <= iuidex_di_in.mem_sign;
-                iuidex_reg.mem_type  <= iuidex_di_in.mem_type;
+                iuidex_reg.rs1_data <= iuidex_di_in.rs1_data;
+                iuidex_reg.rs1_fw   <= iuidex_di_in.rs1_fw;
+                iuidex_reg.rs2_data <= iuidex_di_in.rs2_data;
+                iuidex_reg.rs2_fw   <= iuidex_di_in.rs2_fw;
+                iuidex_reg.rs3_data <= iuidex_di_in.rs3_data;
+                iuidex_reg.rs3_fw   <= iuidex_di_in.rs3_fw;
+                iuidex_reg.opecode  <= iuidex_di_in.opecode;
+                iuidex_reg.cond     <= iuidex_di_in.cond;
+                iuidex_reg.rd_sel   <= iuidex_di_in.rd_sel;
+                iuidex_reg.pc       <= iuidex_di_in.pc;
+                iuidex_reg.mem_sign <= iuidex_di_in.mem_sign;
+                iuidex_reg.mem_type <= iuidex_di_in.mem_type;
             end if;
         end if;
-    end process IDEX_Pipeline_Register_NonRst;
+    end process IDEX_Pipeline_Register_without_Reset;
 
     iuidex_do_out <= iuidex_reg;
 

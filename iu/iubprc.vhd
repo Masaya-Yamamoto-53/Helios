@@ -1,7 +1,14 @@
 --------------------------------------------------------------------------------
+-- Copyright (c) 2023 Masaya Yamamoto
+-- Released under the MIT license.
+-- see https://opensource.org/licenses/MIT (ENG)
+-- see https://licenses.opensource.jp/MIT/MIT.html (JPN)
+--
 -- Design Name: IU Branch Prediction Address Generator
 -- Description:
--- 
+--   The function sets the prediction bit to enable a specific address
+--   when a branch instruction is selected,
+--   and sign-extends a 19-bit displacement to a 32-bit instruction address.
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;

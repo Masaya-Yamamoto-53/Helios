@@ -1,3 +1,11 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 2023 Masaya Yamamoto
+-- Released under the MIT license.
+-- see https://opensource.org/licenses/MIT (ENG)
+-- see https://licenses.opensource.jp/MIT/MIT.html (JPN)
+--
+-- Design Name: IU Register File Register
+--------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -22,7 +30,7 @@ end iurfreg;
 architecture rtl of iurfreg is
 
     type reg_t  is array (0 to 31) of std_logic_vector(31 downto 0);
-    signal g_reg : reg_t;
+    signal g_reg : reg_t := (others => (others => '0'));
 
 begin
 

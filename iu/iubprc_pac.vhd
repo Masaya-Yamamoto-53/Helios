@@ -1,4 +1,9 @@
 --------------------------------------------------------------------------------
+-- Copyright (c) 2023 Masaya Yamamoto
+-- Released under the MIT license.
+-- see https://opensource.org/licenses/MIT (ENG)
+-- see https://licenses.opensource.jp/MIT/MIT.html (JPN)
+--
 -- Design Name: IU Branch Prediction Address Generator
 --------------------------------------------------------------------------------
 library ieee;
@@ -26,6 +31,7 @@ end iubprc_pac;
 
 package body iubprc_pac is
 
+    -- Function to sign-extend a 19-bit displacement
     function iubprc_sign_extend_disp19 (
         signal addr : std_logic_vector(18 downto 0)
     ) return std_logic_vector is

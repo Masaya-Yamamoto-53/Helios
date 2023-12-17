@@ -1,8 +1,14 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 2023 Masaya Yamamoto
+-- Released under the MIT license.
+-- see https://opensource.org/licenses/MIT (ENG)
+-- see https://licenses.opensource.jp/MIT/MIT.html (JPN)
+--
+-- Design Name: IU IF/ID Pipeline Register
+--------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
 
-use work.iu_pac.all;
 use work.iuifid_pac.all;
 
 entity iuifid is
@@ -23,9 +29,9 @@ architecture rtl of iuifid is
 begin
 
     -----------------------------------------------------------
-    -- IU ID/EX Pipeline Register                            --
+    -- IU IF/ID Pipeline Register with Reset                 --
     -----------------------------------------------------------
-    IFID_Pipeline_Register_Rst : process (
+    IFID_Pipeline_Register_with_Reset : process (
         iuifid_clk_in,
         iuifid_rst_in,
         iuifid_wen_in,
@@ -34,8 +40,7 @@ begin
     )
     begin
         if (iuifid_clk_in'event and iuifid_clk_in = '1') then
-            if ((iuifid_rst_in  = '1')
-             or (iuifid_flash_in = '1')) then
+            if ((iuifid_rst_in = '1') or (iuifid_flash_in = '1')) then
                 iuifid_reg.intr_req <= st_iuifid_if_INIT.intr_req;
                 iuifid_reg.inst     <= st_iuifid_if_INIT.inst;
                 iuifid_reg.token    <= st_iuifid_if_INIT.token;
@@ -47,20 +52,25 @@ begin
                 end if;
             end if;
         end if;
-    end process IFID_Pipeline_Register_Rst;
+    end process IFID_Pipeline_Register_with_Reset;
 
-    IFID_Pipeline_Register_NonRst : process (
+    -----------------------------------------------------------
+    -- IU IF/ID Pipeline Register without Reset              --
+    -----------------------------------------------------------
+    IFID_Pipeline_Register_without_Reset : process (
         iuifid_clk_in,
+        iuifid_rst_in,
         iuifid_wen_in,
+        iuifid_flash_in,
         iuifid_di_in
     )
     begin
         if (iuifid_clk_in'event and iuifid_clk_in = '1') then
             if (iuifid_wen_in = '0') then
-                iuifid_reg.pc  <= iuifid_di_in.pc;
+                iuifid_reg.pc <= iuifid_di_in.pc;
             end if;
         end if;
-    end process IFID_Pipeline_Register_NonRst;
+    end process IFID_Pipeline_Register_without_Reset;
 
     iuifid_do_out <= iuifid_reg;
 

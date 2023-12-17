@@ -1,7 +1,13 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 2023 Masaya Yamamoto
+-- Released under the MIT license.
+-- see https://opensource.org/licenses/MIT (ENG)
+-- see https://licenses.opensource.jp/MIT/MIT.html (JPN)
+--
+-- Design Name: IU IF/ID Pipeline Register
+--------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
-
-use work.iu_pac.all;
 
 package iuifid_pac is
 

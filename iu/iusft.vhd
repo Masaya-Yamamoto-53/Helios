@@ -1,15 +1,20 @@
 --------------------------------------------------------------------------------
+-- Copyright (c) 2023 Masaya Yamamoto
+-- Released under the MIT license.
+-- see https://opensource.org/licenses/MIT (ENG)
+-- see https://licenses.opensource.jp/MIT/MIT.html (JPN)
+--
 -- Design Name: IU Shift Unit
 -- Description:
 -- * Processing is determined by the value of `iusft_op_in`:
---   * When `iusft_op_in = "000"`: unimplemented
---   * When `iusft_op_in = "001"`: Shift Left Logical
---   * When `iusft_op_in = "010"`: Shift Right Logical
---   * When `iusft_op_in = "011"`: Shift Right Arithmetic
---   * When `iusft_op_in = "100"`: Sign-EXtend Byte
---   * When `iusft_op_in = "101"`: Sign-Extend Halfword
---   * When `iusft_op_in = "110"`: unimplemented
---   * When `iusft_op_in = "111"`: unimplemented
+--   * op_in = "000"`: unimplemented
+--   * op_in = "001"`: Shift Left Logical
+--   * op_in = "010"`: Shift Right Logical
+--   * op_in = "011"`: Shift Right Arithmetic
+--   * op_in = "100"`: Sign-EXtend Byte
+--   * op_in = "101"`: Sign-Extend Halfword
+--   * op_in = "110"`: unimplemented
+--   * op_in = "111"`: unimplemented
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;

@@ -1,4 +1,9 @@
 --------------------------------------------------------------------------------
+-- Copyright (c) 2023 Masaya Yamamoto
+-- Released under the MIT license.
+-- see https://opensource.org/licenses/MIT (ENG)
+-- see https://licenses.opensource.jp/MIT/MIT.html (JPN)
+--
 -- Design Name: IU CALL Instruction Address Generator
 --------------------------------------------------------------------------------
 library ieee;

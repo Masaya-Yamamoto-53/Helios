@@ -1,3 +1,20 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 2023 Masaya Yamamoto
+-- Released under the MIT license.
+-- see https://opensource.org/licenses/MIT (ENG)
+-- see https://licenses.opensource.jp/MIT/MIT.html (JPN)
+--
+-- Design Name: IU Condition
+-- Description:
+--   * cond_in = "000": BRLBC : Branch if Register Low Bit is Clear
+--   * cond_in = "001": BRZ   : Branch of Register Zero
+--   * cond_in = "010": BRLZ  : Branch on Register Less Than Zero
+--   * cond_in = "011": BRLEZ : Branch on Register Less Than or Equal to Zero
+--   * cond_in = "100": BRLBS : Branch if Register Low Bit is Set
+--   * cond_in = "101": BRNZ  : Branch on Register Not Zero
+--   * cond_in = "110": BRGZ  : Branch on Register Greater Than Zero
+--   * cond_in = "111": BRGEZ : Branch on Register Greater Than or Equal to Zero
+--------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all; 

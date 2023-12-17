@@ -1,3 +1,11 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 2023 Masaya Yamamoto
+-- Released under the MIT license.
+-- see https://opensource.org/licenses/MIT (ENG)
+-- see https://licenses.opensource.jp/MIT/MIT.html (JPN)
+--
+-- Design Name: IU Execute Stage
+--------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -129,10 +137,6 @@ begin
         iucmp_op_in  => iuexstg_opecode_in,
         iucmp_di1_in => iufwpastu_rs1_sig,
         iucmp_di2_in => iufwpastu_rs2_sig,
-        iucmp_n_out  => open,
-        iucmp_z_out  => open,
-        iucmp_v_out  => open,
-        iucmp_c_out  => open,
         iucmp_do_out => iucmp_do_sig
     );
 

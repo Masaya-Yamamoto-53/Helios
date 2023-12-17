@@ -1,6 +1,13 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 2023 Masaya Yamamoto
+-- Released under the MIT license.
+-- see https://opensource.org/licenses/MIT (ENG)
+-- see https://licenses.opensource.jp/MIT/MIT.html (JPN)
+--
+-- Design Name: IU EX/MA Pipeline Register
+--------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
 
 use work.iuexma_pac.all;
 
@@ -21,7 +28,10 @@ architecture rtl of iuexma is
 
 begin
 
-    EXMA_Pipeline_Register_Rst : process (
+    -----------------------------------------------------------
+    -- IU EX/MA Pipeline Register with Reset                 --
+    -----------------------------------------------------------
+    EXMA_Pipeline_Register_with_Reset : process (
         iuexma_clk_in,
         iuexma_rst_in,
         iuexma_wen_in,
@@ -30,8 +40,7 @@ begin
     )
     begin
         if (iuexma_clk_in'event and iuexma_clk_in = '1') then
-            if ((iuexma_rst_in   = '1')
-             or (iuexma_flash_in = '1')) then
+            if ((iuexma_rst_in = '1') or (iuexma_flash_in = '1')) then
                 iuexma_reg.mul_cs    <= st_iuexma_if_INIT.mul_cs;
                 iuexma_reg.rd_we     <= st_iuexma_if_INIT.rd_we;
                 iuexma_reg.psr_read  <= st_iuexma_if_INIT.psr_read;
@@ -61,9 +70,12 @@ begin
                 end if;
             end if;
         end if;
-    end process EXMA_Pipeline_Register_Rst;
+    end process EXMA_Pipeline_Register_with_Reset;
 
-    EXMA_Pipeline_Register_NonRst : process (
+    -----------------------------------------------------------
+    -- IU EX/MA Pipeline Register without Reset              --
+    -----------------------------------------------------------
+    EXMA_Pipeline_Register_without_Reset : process (
         iuexma_clk_in,
         iuexma_wen_in,
         iuexma_di_in
@@ -79,7 +91,7 @@ begin
                 iuexma_reg.mem_data <= iuexma_di_in.mem_data;
             end if;
         end if;
-    end process EXMA_Pipeline_Register_NonRst;
+    end process EXMA_Pipeline_Register_without_Reset;
 
     iuexma_do_out <= iuexma_reg;
 

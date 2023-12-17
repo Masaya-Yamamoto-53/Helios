@@ -1,15 +1,23 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 2023 Masaya Yamamoto
+-- Released under the MIT license.
+-- see https://opensource.org/licenses/MIT (ENG)
+-- see https://licenses.opensource.jp/MIT/MIT.html (JPN)
+--
+-- Design Name: IU Control
+--------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 
 package iuctrl_pac is
 
-    constant IUCTRL_OP_BRPR    : std_logic_vector(1 downto 0) := "00";
-    constant IUCTRL_OP_CALL    : std_logic_vector(1 downto 0) := "01";
-    constant IUCTRL_OP_ARTH    : std_logic_vector(1 downto 0) := "10";
-    constant IUCTRL_OP_LDST    : std_logic_vector(1 downto 0) := "11";
+    constant IUCTRL_OP_BRPR    : std_logic_vector(1 downto 0) := "00"; -- Branch Prediction Instruction Format
+    constant IUCTRL_OP_CALL    : std_logic_vector(1 downto 0) := "01"; -- Call and Link Instruction Format
+    constant IUCTRL_OP_ARTH    : std_logic_vector(1 downto 0) := "10"; -- Arithmetic Instruction Format
+    constant IUCTRL_OP_LDST    : std_logic_vector(1 downto 0) := "11"; -- Load/Store Instruction Format
 
-    constant IUCTRL_OP2_SET    : std_logic_vector(1 downto 0) := "00";
-    constant IUCTRL_OP2_IBR    : std_logic_vector(1 downto 0) := "01";
+    constant IUCTRL_OP2_SET    : std_logic_vector(1 downto 0) := "00"; -- SETHI Instuction 
+    constant IUCTRL_OP2_IBR    : std_logic_vector(1 downto 0) := "01"; -- Integer Conditional Branch Instuction
 
     constant IUCTRL_INST_JMPL  : std_logic_vector(5 downto 0) := "010000";
     constant IUCTRL_INST_RETT  : std_logic_vector(5 downto 0) := "010001";
@@ -26,7 +34,7 @@ package iuctrl_pac is
         rs2_sel    : std_logic_vector( 4 downto 0);
         rs3_sel    : std_logic_vector( 4 downto 0);
 
-        imm_data   : std_logic_vector(12 downto 0);
+        imm_data   : std_logic_vector(12 downto 0); -- Signed 13-bit immediate data
         sethi      : std_logic_vector(22 downto 0);
         disp19     : std_logic_vector(18 downto 0);
 

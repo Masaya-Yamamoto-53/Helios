@@ -1,3 +1,11 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 2023 Masaya Yamamoto
+-- Released under the MIT license.
+-- see https://opensource.org/licenses/MIT (ENG)
+-- see https://licenses.opensource.jp/MIT/MIT.html (JPN)
+--
+-- Design Name: IU(Integer Unit)
+--------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -133,8 +141,7 @@ begin
     iuintr_excep_req_sig(14) <= '0';
     iuintr_excep_req_sig(15) <= '0';
 
-    iuintr_dis_sig     <= --iuifln_rett_sig
-                          iuidln_intr_dis_sig
+    iuintr_dis_sig     <= iuidln_intr_dis_sig
                        or iuexln_intr_dis_sig
                        or iumaln_intr_dis_sig;
 

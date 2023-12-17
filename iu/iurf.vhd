@@ -1,6 +1,13 @@
+--------------------------------------------------------------------------------
+-- Copyright (c) 2023 Masaya Yamamoto
+-- Released under the MIT license.
+-- see https://opensource.org/licenses/MIT (ENG)
+-- see https://licenses.opensource.jp/MIT/MIT.html (JPN)
+--
+-- Design Name: IU Register File
+--------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
 
 use work.iu_pac.all;
 use work.iurf_pac.all;
@@ -31,7 +38,7 @@ architecture rtl of iurf is
 
 begin
 
-    IU_RegisterFile : iurfreg
+    IU_Register_File : iurfreg
     port map (
        iurfreg_clk_in     => iurf_clk_in,
        iurfreg_rs1_sel_in => iurf_rs1_sel_in,
@@ -43,7 +50,7 @@ begin
        iurfreg_rs3_do_out => iurf_rs3_do_sig
     );
 
-    IU_rs1_port : iurfport
+    IU_Register_File_Port_RS1: iurfport
     port map (
        iurfport_sel_in => iurf_rs1_sel_in,
        iurfport_di_in  => iurf_rs1_do_sig,
@@ -52,7 +59,7 @@ begin
        iurfport_do_out => iurf_rs1_do_out
     );
 
-    IU_rs2_port : iurfport
+    IU_Register_File_Port_RS2: iurfport
     port map (
        iurfport_sel_in => iurf_rs2_sel_in,
        iurfport_di_in  => iurf_rs2_do_sig,
@@ -61,7 +68,7 @@ begin
        iurfport_do_out => iurf_rs2_do_out
     );
 
-    IU_rs3_port : iurfport
+    IU_Register_File_Port_RS3: iurfport
     port map (
        iurfport_sel_in => iurf_rs3_sel_in,
        iurfport_di_in  => iurf_rs3_do_sig,
