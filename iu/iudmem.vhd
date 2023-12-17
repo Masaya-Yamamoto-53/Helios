@@ -9,8 +9,8 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-
-use work.iu.all;
+ 
+use work.iu_pac.all;
 
 entity iudmem is
     port (

@@ -17,6 +17,10 @@ entity helios is
         -- System Clock
         h_sys_clk_in            : in    std_logic;
 
+        -- UART Ports
+        h_sys_uart_sdi_in       : in    std_logic;
+        h_sys_uart_sdo_out      :   out std_logic;
+
         -- ISSI 512K x 8 High-Speed Asynhronous CMOS Static RAM
         h_sys_ext_sram_addr_out :   out std_logic_vector(18 downto 0);
         h_sys_ext_sran_dq_inout : inout std_logic_vector( 7 downto 0);
@@ -51,6 +55,26 @@ architecture rtl of helios is
     signal h_data_a_sig    : std_logic;
     signal h_data_di_sig   : std_logic_vector(31 downto 0);
     signal h_data_do_sig   : std_logic_vector(31 downto 0);
+
+
+    signal uart_cs_sig     : std_logic;
+    signal uart_ti_sig     : std_logic;
+    signal uart_rxi_sig    : std_logic;
+    signal uart_eri_sig    : std_logic;
+    signal uart_tei_sig    : std_logic;
+
+    signal uart_do_sig     : std_logic_vector( 7 downto 0);
+
+    signal ph_seg_cs_sig          : std_logic;
+    signal segdisp_do_sig      : std_logic_vector(15 downto 0);
+    signal segdisp_seg_do_sig  : std_logic_vector(14 downto 0);
+    signal segdisp_seg_sel_sig : std_logic_vector( 1 downto 0);
+
+    signal spi_cs_sig      : std_logic;
+    signal spi_do_sig      : std_logic_vector( 7 downto 0);
+    signal h_sys_spi_sdi_in: std_logic;
+
+    signal uart_sdo_sig   : std_logic;
 
     signal dram_cs_sig       : std_logic;
 
