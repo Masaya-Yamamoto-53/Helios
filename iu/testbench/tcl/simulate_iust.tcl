@@ -10,10 +10,12 @@ set testbench_name "iust_test"
 create_project -force  $project_name -part $part_number
 
 # Add Files
-add_files ../iust.vhd
 add_files ../iuldst_pac.vhd
 add_files ../iustdqm_pac.vhd
 add_files ../iustdo_pac.vhd
+add_files ../iustdqm.vhd
+add_files ../iustdo.vhd
+add_files ../iust.vhd
 add_files ./vhd/iust_test.vhd
 
 # Settings

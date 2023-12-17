@@ -69,18 +69,20 @@ begin
         while (not endfile (fin)) loop
             -- input data
             readline (fin, li);
-            read (li, clk_sig     );
-            read (li, rst_sig     );
-            read (li, wen_sig     );
-            read (li, flash_sig   );
-            read (li, di_sig.pc   );
-            read (li, di_sig.inst );
-            read (li, di_sig.token);
+            read (li, clk_sig        );
+            read (li, rst_sig        );
+            read (li, wen_sig        );
+            read (li, flash_sig      );
+            read (li, di_sig.intr_req);
+            read (li, di_sig.pc      );
+            read (li, di_sig.inst    );
+            read (li, di_sig.token   );
 
             -- result
-            read (li, do_sig.pc   );
-            read (li, do_sig.inst );
-            read (li, do_sig.token);
+            read (li, do_sig.intr_req);
+            read (li, do_sig.pc      );
+            read (li, do_sig.inst    );
+            read (li, do_sig.token   );
 
             iuifid_clk_in   <= clk_sig;
             iuifid_rst_in   <= rst_sig;
@@ -98,6 +100,8 @@ begin
 
             if (iuifid_do_out /= do_sig) then
                 write (lo, str_failure);
+                write (lo, str_separate);
+                write (lo, iuifid_do_out.intr_req);
                 write (lo, str_separate);
                 write (lo, iuifid_do_out.pc);
                 write (lo, str_separate);

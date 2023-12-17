@@ -10,12 +10,14 @@ set testbench_name "iurf_test"
 create_project -force  $project_name -part $part_number
 
 # Add Files
-add_files ../iurf.vhd
 add_files ../iu_pac.vhd
 add_files ../iumawb_pac.vhd
 add_files ../iurfreg_pac.vhd
 add_files ../iurfport_pac.vhd
 add_files ../iurf_pac.vhd
+add_files ../iurfreg.vhd
+add_files ../iurfport.vhd
+add_files ../iurf.vhd
 add_files ./vhd/iurf_test.vhd
 
 # Settings

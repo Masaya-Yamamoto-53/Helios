@@ -135,15 +135,23 @@ begin
              or (iuhdu_mawb_flash_out /= mawb_flash_sig)) then
                 write (lo, str_failure);
                 write (lo, str_separate);
-                write (lo, pc_wen_sig    );
-                write (lo, ifid_wen_sig  );
-                write (lo, ifid_flash_sig);
-                write (lo, idex_wen_sig  );
-                write (lo, idex_flash_sig);
-                write (lo, exma_wen_sig  );
-                write (lo, exma_flash_sig);
-                write (lo, mawb_wen_sig  );
-                write (lo, mawb_flash_sig);
+                write (lo, iuhdu_pc_wen_out    );
+                write (lo, str_separate);
+                write (lo, iuhdu_ifid_wen_out  );
+                write (lo, str_separate);
+                write (lo, iuhdu_ifid_flash_out);
+                write (lo, str_separate);
+                write (lo, iuhdu_idex_wen_out  );
+                write (lo, str_separate);
+                write (lo, iuhdu_idex_flash_out);
+                write (lo, str_separate);
+                write (lo, iuhdu_exma_wen_out  );
+                write (lo, str_separate);
+                write (lo, iuhdu_exma_flash_out);
+                write (lo, str_separate);
+                write (lo, iuhdu_mawb_wen_out  );
+                write (lo, str_separate);
+                write (lo, iuhdu_mawb_flash_out);
             else
                 write (lo, str_pass);
             end if;

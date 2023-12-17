@@ -56,7 +56,6 @@ begin
             readline (fin, li);
             read (li, op_sig );
             read (li, op3_sig);
-            read (li, en_sig );
 
             -- result
             read (li, en_sig  );
@@ -75,7 +74,7 @@ begin
             if (iurett_en_out /= en_sig ) then
                 write (lo, str_failure);
                 write (lo, str_separate);
-                write (lo, en_sig);
+                write (lo, iurett_en_out);
             else
                 write (lo, str_pass);
             end if;
