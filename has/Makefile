@@ -26,4 +26,3 @@ clean:
 	$(RM) as.tab.c
 	$(RM) as.tab.h
 	$(RM) *.o
-	$(RM) has
