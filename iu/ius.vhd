@@ -24,7 +24,7 @@ end ius;
 
 architecture rtl of ius is
 
-    signal s_reg : std_logic := '1';
+    signal s_reg : std_logic := IUS_S_INIT;
 
 begin
 
@@ -37,9 +37,9 @@ begin
     )
     begin
         if (ius_clk_in'event and ius_clk_in = '1') then
-            if (ius_rst_in = '1') then
-                s_reg <= '1';
-            elsif (ius_we_in = '1') then
+            if    (ius_rst_in = '1') then
+                s_reg <= IUS_S_INIT;
+            elsif (ius_we_in  = '1') then
                 s_reg <= ius_di_in;
             end if;
         end if;

@@ -21,9 +21,9 @@ entity iufwpreu is
         iufwpreu_ex_rd_in   : in    st_iufwpre_if;
         iufwpreu_ma_rd_in   : in    st_iufwpre_if;
 
-        iufwpreu_rs1_fw_out :   out std_logic_vector( 3 downto 0);
-        iufwpreu_rs2_fw_out :   out std_logic_vector( 3 downto 0);
-        iufwpreu_rs3_fw_out :   out std_logic_vector( 3 downto 0)
+        iufwpreu_rs1_fw_out :   out std_logic_vector( 1 downto 0);
+        iufwpreu_rs2_fw_out :   out std_logic_vector( 1 downto 0);
+        iufwpreu_rs3_fw_out :   out std_logic_vector( 1 downto 0)
     );
 end iufwpreu;
 

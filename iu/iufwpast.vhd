@@ -16,7 +16,7 @@ use work.iufwu_pac.all;
 
 entity iufwpast is
     port (
-        iufwpast_fw_in      : in    std_logic_vector( 3 downto 0);
+        iufwpast_fw_in      : in    std_logic_vector( 1 downto 0);
         iufwpast_ex_data_in : in    std_logic_vector(31 downto 0);
         iufwpast_ma_rd_in   : in    st_iufwpast_if;
         iufwpast_wb_rd_in   : in    st_iufwpast_if;

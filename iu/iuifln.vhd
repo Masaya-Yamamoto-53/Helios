@@ -5,7 +5,6 @@
 -- see https://licenses.opensource.jp/MIT/MIT.html (JPN)
 --
 -- Design Name: IU Instruction Fetch Stage
--- Description:
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;

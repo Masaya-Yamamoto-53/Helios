@@ -14,11 +14,11 @@ package iuidex_pac is
     type st_iuidex_if is
     record
         rs1_data  : std_logic_vector(31 downto 0);
-        rs1_fw    : std_logic_vector( 3 downto 0);
+        rs1_fw    : std_logic_vector( 1 downto 0);
         rs2_data  : std_logic_vector(31 downto 0);
-        rs2_fw    : std_logic_vector( 3 downto 0);
+        rs2_fw    : std_logic_vector( 1 downto 0);
         rs3_data  : std_logic_vector(31 downto 0);
-        rs3_fw    : std_logic_vector( 3 downto 0);
+        rs3_fw    : std_logic_vector( 1 downto 0);
 
         opecode   : std_logic_vector( 2 downto 0);
         cond_cs   : std_logic;

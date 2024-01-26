@@ -32,23 +32,51 @@ architecture rtl of iuschk is
 
 begin
 
-    iuschk_rett_en_out <= '0' when ((iuschk_rett_in = '1')
-                                and (iuschk_s_in    = '0')) else
+    -- rett  s   en 
+    -- +---+---+---+
+    -- | 0 | 0 | 1 | Not Supervisor
+    -- | 0 | 1 | 1 |     Supervisor
+    -- | 1 | 0 | 0 | Not Supervisor
+    -- | 1 | 1 | 1 |     Supervisor
+    -- +---+---+---+
+    iuschk_rett_en_out <= '0' when ((iuschk_rett_in     = '1')
+                                and (iuschk_s_in        = '0')) else
                           '1';
 
+    --  psr  s   en 
+    -- +---+---+---+
+    -- | 0 | 0 | 1 | Not Supervisor
+    -- | 0 | 1 | 1 |     Supervisor
+    -- | 1 | 0 | 0 | Not Supervisor
+    -- | 1 | 1 | 1 |     Supervisor
+    -- +---+---+---+
     iuschk_psr_en_out  <= '0' when ((iuschk_intr_req_in = '0')
                                 and (iuschk_psr_in      = '1')
                                 and (iuschk_s_in        = '0')) else
                           '1';
 
-    iuschk_lda_en_out  <= '0' when ((iuschk_read_in = '1')
-                                and (iuschk_a_in    = '1')
-                                and (iuschk_s_in    = '0')) else
+    --   a   s   en 
+    -- +---+---+---+
+    -- | 0 | 0 | 1 | Non-Privileged & Not Supervisor
+    -- | 0 | 1 | 1 | Non-Privileged &     Supervisor
+    -- | 1 | 0 | 0 |     Privilegad & Not Supervisor
+    -- | 1 | 1 | 1 |     Privilegad &     Supervisor
+    -- +---+---+---+
+    iuschk_lda_en_out  <= '0' when ((iuschk_read_in     = '1')
+                                and (iuschk_a_in        = '1')
+                                and (iuschk_s_in        = '0')) else
                           '1';
 
-    iuschk_sta_en_out  <= '0' when ((iuschk_write_in = '1')
-                                and (iuschk_a_in     = '1')
-                                and (iuschk_s_in     = '0')) else
+    --   a   s   en 
+    -- +---+---+---+
+    -- | 0 | 0 | 1 | Non-Privileged & Not Supervisor
+    -- | 0 | 1 | 1 | Non-Privileged &     Supervisor
+    -- | 1 | 0 | 0 |     Privilegad & Not Supervisor
+    -- | 1 | 1 | 1 |     Privilegad &     Supervisor
+    -- +---+---+---+
+    iuschk_sta_en_out  <= '0' when ((iuschk_write_in    = '1')
+                                and (iuschk_a_in        = '1')
+                                and (iuschk_s_in        = '0')) else
                           '1';
 
 end rtl;

@@ -18,7 +18,7 @@ entity iufwpre is
         iufwpre_sel_in   : in    std_logic_vector( 4 downto 0);
         iufwpre_ex_rd_in : in    st_iufwpre_if;
         iufwpre_ma_rd_in : in    st_iufwpre_if;
-        iufwpre_fw_out   :   out std_logic_vector( 3 downto 0)
+        iufwpre_fw_out   :   out std_logic_vector( 1 downto 0)
     );
 end iufwpre;
 

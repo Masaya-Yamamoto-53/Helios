@@ -11,6 +11,11 @@ use ieee.std_logic_1164.all;
 
 package ius_pac is
 
+    -- Supervisor Register Initial Value
+    -- 0: Not Supervisor
+    -- 1:     Supervisor
+    constant IUS_S_INIT : std_logic := '1';
+
     component ius
         port (
             ius_clk_in : in    std_logic;

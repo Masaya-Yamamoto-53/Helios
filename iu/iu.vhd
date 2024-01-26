@@ -34,7 +34,7 @@ entity iu is
         iu_sys_rst_in    : in    std_logic;
 
         iu_inst_addr_out :   out std_logic_vector(29 downto 0);
-        iu_inst_data_in  : in    iu_data_if;
+        iu_inst_data_in  : in    std_logic_vector(31 downto 0);
 
         iu_data_re_out   :   out std_logic;
         iu_data_we_out   :   out std_logic;

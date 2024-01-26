@@ -45,21 +45,21 @@ package iufwu_pac is
             iufwpreu_ex_rd_in   : in    st_iufwpre_if;
             iufwpreu_ma_rd_in   : in    st_iufwpre_if;
 
-            iufwpreu_rs1_fw_out :   out std_logic_vector( 3 downto 0);
-            iufwpreu_rs2_fw_out :   out std_logic_vector( 3 downto 0);
-            iufwpreu_rs3_fw_out :   out std_logic_vector( 3 downto 0)
+            iufwpreu_rs1_fw_out :   out std_logic_vector( 1 downto 0);
+            iufwpreu_rs2_fw_out :   out std_logic_vector( 1 downto 0);
+            iufwpreu_rs3_fw_out :   out std_logic_vector( 1 downto 0)
         );
     end component;
 
     component iufwpastu
         port (
-            iufwpastu_rs1_fw_in  : in    std_logic_vector( 3 downto 0);
+            iufwpastu_rs1_fw_in  : in    std_logic_vector( 1 downto 0);
             iufwpastu_rs1_di_in  : in    std_logic_vector(31 downto 0);
 
-            iufwpastu_rs2_fw_in  : in    std_logic_vector( 3 downto 0);
+            iufwpastu_rs2_fw_in  : in    std_logic_vector( 1 downto 0);
             iufwpastu_rs2_di_in  : in    std_logic_vector(31 downto 0);
 
-            iufwpastu_rs3_fw_in  : in    std_logic_vector( 3 downto 0);
+            iufwpastu_rs3_fw_in  : in    std_logic_vector( 1 downto 0);
             iufwpastu_rs3_di_in  : in    std_logic_vector(31 downto 0);
 
             iufwpastu_ma_rd_in   : in    st_iufwpast_if;
@@ -76,13 +76,13 @@ package iufwu_pac is
             iufwpre_sel_in   : in    std_logic_vector( 4 downto 0);
             iufwpre_ex_rd_in : in    st_iufwpre_if;
             iufwpre_ma_rd_in : in    st_iufwpre_if;
-            iufwpre_fw_out   :   out std_logic_vector( 3 downto 0)
+            iufwpre_fw_out   :   out std_logic_vector( 1 downto 0)
         );
     end component;
 
     component iufwpast
         port (
-            iufwpast_fw_in      : in    std_logic_vector( 3 downto 0);
+            iufwpast_fw_in      : in    std_logic_vector( 1 downto 0);
             iufwpast_ex_data_in : in    std_logic_vector(31 downto 0);
             iufwpast_ma_rd_in   : in    st_iufwpast_if;
             iufwpast_wb_rd_in   : in    st_iufwpast_if;

@@ -14,13 +14,13 @@ use work.iufwu_pac.all;
 
 entity iufwpastu is
     port (
-        iufwpastu_rs1_fw_in  : in    std_logic_vector( 3 downto 0);
+        iufwpastu_rs1_fw_in  : in    std_logic_vector( 1 downto 0);
         iufwpastu_rs1_di_in  : in    std_logic_vector(31 downto 0);
 
-        iufwpastu_rs2_fw_in  : in    std_logic_vector( 3 downto 0);
+        iufwpastu_rs2_fw_in  : in    std_logic_vector( 1 downto 0);
         iufwpastu_rs2_di_in  : in    std_logic_vector(31 downto 0);
 
-        iufwpastu_rs3_fw_in  : in    std_logic_vector( 3 downto 0);
+        iufwpastu_rs3_fw_in  : in    std_logic_vector( 1 downto 0);
         iufwpastu_rs3_di_in  : in    std_logic_vector(31 downto 0);
 
         iufwpastu_ma_rd_in   : in    st_iufwpast_if;

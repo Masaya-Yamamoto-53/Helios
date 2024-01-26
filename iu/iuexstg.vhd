@@ -24,13 +24,13 @@ use work.iuexstg_pac.all;
 
 entity iuexstg is
     port (
-        iuexstg_rs1_fw_in        : in std_logic_vector( 3 downto 0);
+        iuexstg_rs1_fw_in        : in std_logic_vector( 1 downto 0);
         iuexstg_rs1_di_in        : in std_logic_vector(31 downto 0);
 
-        iuexstg_rs2_fw_in        : in std_logic_vector( 3 downto 0);
+        iuexstg_rs2_fw_in        : in std_logic_vector( 1 downto 0);
         iuexstg_rs2_di_in        : in std_logic_vector(31 downto 0);
 
-        iuexstg_rs3_fw_in        : in std_logic_vector( 3 downto 0);
+        iuexstg_rs3_fw_in        : in std_logic_vector( 1 downto 0);
         iuexstg_rs3_di_in        : in std_logic_vector(31 downto 0);
 
         iuexstg_ma_rd_in         : st_iufwpast_if;

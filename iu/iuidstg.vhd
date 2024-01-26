@@ -46,9 +46,9 @@ architecture rtl of iuidstg is
     signal iuctrl_do_sig       : st_iuctrl_if;
 
     -- IU Forwarding Unit Signals I/F
-    signal iufwpreu_rs1_fw_sig : std_logic_vector(3 downto 0);
-    signal iufwpreu_rs2_fw_sig : std_logic_vector(3 downto 0);
-    signal iufwpreu_rs3_fw_sig : std_logic_vector(3 downto 0);
+    signal iufwpreu_rs1_fw_sig : std_logic_vector(1 downto 0);
+    signal iufwpreu_rs2_fw_sig : std_logic_vector(1 downto 0);
+    signal iufwpreu_rs3_fw_sig : std_logic_vector(1 downto 0);
 
 begin
 

@@ -13,15 +13,15 @@ use work.iu_pac.all;
 
 package iuhdu_pac is
 
-    constant IUHDU_IF_WE    : integer := 0;
-    constant IUHDU_ID_WE    : integer := 1;
-    constant IUHDU_ID_FLASH : integer := 2;
-    constant IUHDU_EX_WE    : integer := 3;
+    constant IUHDU_IF_WEN   : integer := 8;
+    constant IUHDU_ID_WEN   : integer := 7;
+    constant IUHDU_ID_FLASH : integer := 6;
+    constant IUHDU_EX_WEN   : integer := 5;
     constant IUHDU_EX_FLASH : integer := 4;
-    constant IUHDU_MA_WE    : integer := 5;
-    constant IUHDU_MA_FLASH : integer := 6;
-    constant IUHDU_WB_WE    : integer := 7;
-    constant IUHDU_WB_FLASH : integer := 8;
+    constant IUHDU_MA_WEN   : integer := 3;
+    constant IUHDU_MA_FLASH : integer := 2;
+    constant IUHDU_WB_WEN   : integer := 1;
+    constant IUHDU_WB_FLASH : integer := 0;
 
     component iuhdu
         port (
