@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "iucond_test_behav" "xil_defaultlib.iucond_test" -log "elaborate.log" 

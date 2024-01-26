@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../iucond_pac.vhd" \
+"../../../../../../iucond.vhd" \
+"../../../../../vhd/iucond_test.vhd" \
+
+# Do not sort compile order
+nosort

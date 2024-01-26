@@ -1,0 +1,7 @@
+Running: xsim.dir/iuet_test_behav/xsimk -simmode gui -wdb iuet_test_behav.wdb -simrunnum 0 -socket 59115
+Design successfully loaded
+Design Loading Memory Usage: 23532 KB (Peak: 24108 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 105268 KB (Peak: 162800 KB)
+Simulation CPU Usage: 10 ms

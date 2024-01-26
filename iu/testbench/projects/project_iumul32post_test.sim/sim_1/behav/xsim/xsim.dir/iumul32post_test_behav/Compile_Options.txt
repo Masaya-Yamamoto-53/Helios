@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "iumul32post_test_behav" "xil_defaultlib.iumul32post_test" -log "elaborate.log" 

@@ -1,0 +1,8 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iucc_pac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iucc.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'iucc'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iucmp_pac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iucmp.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'iucmp'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/testbench/vhd/iucmp_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'iucmp_test'

@@ -1,0 +1,23 @@
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2023.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot iust_test_behav xil_defaultlib.iust_test -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_textio
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.iuldst_pac
+Compiling package xil_defaultlib.iustdqm_pac
+Compiling package xil_defaultlib.iustdo_pac
+Compiling architecture rtl of entity xil_defaultlib.iustdqm [iustdqm_default]
+Compiling architecture rtl of entity xil_defaultlib.iustdo [iustdo_default]
+Compiling architecture rtl of entity xil_defaultlib.iust [iust_default]
+Compiling architecture behavior of entity xil_defaultlib.iust_test
+Built simulation snapshot iust_test_behav

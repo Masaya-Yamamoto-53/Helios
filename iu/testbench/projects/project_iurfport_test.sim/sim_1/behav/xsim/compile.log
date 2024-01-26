@@ -1,0 +1,8 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iu_pac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iumawb_pac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iurf_pac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iurfport_pac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iurfport.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'iurfport'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/testbench/vhd/iurfport_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'iurfport_test'

@@ -1,0 +1,7 @@
+Running: xsim.dir/iurett_test_behav/xsimk -simmode gui -wdb iurett_test_behav.wdb -simrunnum 0 -socket 44383
+Design successfully loaded
+Design Loading Memory Usage: 23536 KB (Peak: 24108 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 113472 KB (Peak: 162804 KB)
+Simulation CPU Usage: 20 ms

@@ -1,0 +1,7 @@
+Running: xsim.dir/iufmt1dec_test_behav/xsimk -simmode gui -wdb iufmt1dec_test_behav.wdb -simrunnum 0 -socket 40533
+Design successfully loaded
+Design Loading Memory Usage: 23556 KB (Peak: 24116 KB)
+Design Loading CPU Usage: 10 ms
+Simulation completed
+Simulation Memory Usage: 113492 KB (Peak: 162824 KB)
+Simulation CPU Usage: 10 ms

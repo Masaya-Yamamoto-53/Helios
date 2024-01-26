@@ -1,0 +1,26 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../iu_pac.vhd" \
+"../../../../../../iumawb_pac.vhd" \
+"../../../../../../iuldst_pac.vhd" \
+"../../../../../../iualu_pac.vhd" \
+"../../../../../../iuctrl_pac.vhd" \
+"../../../../../../iucmp_pac.vhd" \
+"../../../../../../iucond_pac.vhd" \
+"../../../../../../iufmt0dec_pac.vhd" \
+"../../../../../../iufmt1dec_pac.vhd" \
+"../../../../../../iufmt2dec_pac.vhd" \
+"../../../../../../iufmt3dec_pac.vhd" \
+"../../../../../../iuintrdec_pac.vhd" \
+"../../../../../../iuctrl.vhd" \
+"../../../../../../iusft_pac.vhd" \
+"../../../../../../iurf_pac.vhd" \
+"../../../../../../iufmt0dec.vhd" \
+"../../../../../../iufmt1dec.vhd" \
+"../../../../../../iufmt2dec.vhd" \
+"../../../../../../iufmt3dec.vhd" \
+"../../../../../../iuintrdec.vhd" \
+"../../../../../vhd/iuctrl_test.vhd" \
+
+# Do not sort compile order
+nosort

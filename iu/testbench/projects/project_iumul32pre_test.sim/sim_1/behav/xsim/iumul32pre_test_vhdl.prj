@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../iumul32pre.vhd" \
+"../../../../../vhd/iumul32pre_test.vhd" \
+
+# Do not sort compile order
+nosort

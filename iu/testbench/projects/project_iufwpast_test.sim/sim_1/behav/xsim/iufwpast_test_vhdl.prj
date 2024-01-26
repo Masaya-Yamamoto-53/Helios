@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../iu_pac.vhd" \
+"../../../../../../iufwu_pac.vhd" \
+"../../../../../../iufwpast.vhd" \
+"../../../../../vhd/iufwpast_test.vhd" \
+
+# Do not sort compile order
+nosort

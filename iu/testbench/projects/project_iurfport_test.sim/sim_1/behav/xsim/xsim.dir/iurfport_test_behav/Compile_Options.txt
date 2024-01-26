@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "iurfport_test_behav" "xil_defaultlib.iurfport_test" -log "elaborate.log" 

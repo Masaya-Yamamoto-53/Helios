@@ -1,0 +1,5 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iumawb_pac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iumawb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'iumawb'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/testbench/vhd/iumawb_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'iumawb_test'

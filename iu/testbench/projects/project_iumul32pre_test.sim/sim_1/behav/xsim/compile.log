@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iumul32pre.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'iumul32pre'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/testbench/vhd/iumul32pre_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'iumul32pre_test'

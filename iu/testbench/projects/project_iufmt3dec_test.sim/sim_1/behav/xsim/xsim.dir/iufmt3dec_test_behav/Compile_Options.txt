@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "iufmt3dec_test_behav" "xil_defaultlib.iufmt3dec_test" -log "elaborate.log" 

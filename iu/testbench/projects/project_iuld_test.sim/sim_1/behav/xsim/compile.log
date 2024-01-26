@@ -1,0 +1,5 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iuldst_pac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iuld.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'iuld'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/testbench/vhd/iuld_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'iuld_test'
