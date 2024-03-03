@@ -55,6 +55,104 @@
   </thead>
 </table>
 
+<table>
+  <tr>
+    <th colspan="2">op2</th>
+    <th colspan="3">cond</th>
+    <th>mnemonic</th>
+    <th>instruction</th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>0</td>
+    <td align="center" colspan="3"> </td>
+    <td>SETHI</td>
+    <td>Set High 23 bits of rs3 Register</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td></td>
+    <td>0</td></td>
+    <td>0</td></td>
+    <td>BRLBC</td>
+    <td>Branch if Register Low Bit is Clear</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td></td>
+    <td>0</td></td>
+    <td>1</td></td>
+    <td>BRZ</td>
+    <td>Branch on Register Zero</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td></td>
+    <td>1</td></td>
+    <td>0</td></td>
+    <td>BRLZ</td>
+    <td>Branch on Register Less Than Zero</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td></td>
+    <td>1</td></td>
+    <td>1</td></td>
+    <td>BRLEZ</td>
+    <td>Branch on Register Less Than or Equal to Zero</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td></td>
+    <td>0</td></td>
+    <td>0</td></td>
+    <td>BRLBS</td>
+    <td>Branch if Register Low Bit is Set</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td></td>
+    <td>0</td></td>
+    <td>1</td></td>
+    <td>BRNZ</td>
+    <td>Branch on Register Not Zero</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td></td>
+    <td>1</td></td>
+    <td>0</td></td>
+    <td>BRGZ</td>
+    <td>Branch on Register Greater Than Zero</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td></td>
+    <td>1</td></td>
+    <td>1</td></td>
+    <td>BRGEZ</td>
+    <td>Branch on Register Greater Than or Equal to Zero</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>0</td>
+    <td colspan="5">unused</td></td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>1</td>
+    <td colspan="5">unused</td></td>
+  </tr>
+</table>
+
 ## Format 1 (fmt = "01"): CALL
 <table>
     <tr>
@@ -150,6 +248,88 @@
       <td align="center" colspan="1">i=1</td>
       <td align="center" colspan="13">simm13</td>
     </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="6">op3</th>
+    <th>mnemonic</th>
+    <th>instruction</th>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+    <td>ADD</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td>
+    <td>AND</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td>
+    <td>OR</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td>
+    <td>XOR</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td>
+    <td>SUB</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td>
+    <td>ANDN</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td>
+    <td>ORN</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td>
+    <td>XNOR</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td>
+    <td>MUL</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td>
+    <td>UMULH</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td>
+    <td colspan="2">-</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td>
+    <td colspan="2">-</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td>
+    <td colspan="2">-</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td>
+    <td colspan="2">-</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td>
+    <td colspan="2">-</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td>
+    <td colspan="2">-</td>
+  </tr>
 </table>
 ## Format 3 (fmt = "11"): Load/Store Instruction
 <table>
