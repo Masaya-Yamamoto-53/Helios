@@ -1,6 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iu_pac.vhd" into library xil_defaultlib
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iufwu_pac.vhd" into library xil_defaultlib
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iufwpast.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'iufwpast'
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/testbench/vhd/iufwpast_test.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'iufwpast_test'

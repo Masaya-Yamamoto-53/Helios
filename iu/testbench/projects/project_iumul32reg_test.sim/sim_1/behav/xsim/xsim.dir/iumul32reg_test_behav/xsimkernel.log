@@ -1,7 +1,0 @@
-Running: xsim.dir/iumul32reg_test_behav/xsimk -simmode gui -wdb iumul32reg_test_behav.wdb -simrunnum 0 -socket 57371
-Design successfully loaded
-Design Loading Memory Usage: 23548 KB (Peak: 24112 KB)
-Design Loading CPU Usage: 10 ms
-Simulation completed
-Simulation Memory Usage: 113484 KB (Peak: 162816 KB)
-Simulation CPU Usage: 10 ms

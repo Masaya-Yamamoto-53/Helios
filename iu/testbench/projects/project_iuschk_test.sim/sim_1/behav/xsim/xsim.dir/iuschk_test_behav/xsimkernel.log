@@ -1,7 +1,0 @@
-Running: xsim.dir/iuschk_test_behav/xsimk -simmode gui -wdb iuschk_test_behav.wdb -simrunnum 0 -socket 52149
-Design successfully loaded
-Design Loading Memory Usage: 23544 KB (Peak: 24108 KB)
-Design Loading CPU Usage: 0 ms
-Simulation completed
-Simulation Memory Usage: 105280 KB (Peak: 162812 KB)
-Simulation CPU Usage: 10 ms

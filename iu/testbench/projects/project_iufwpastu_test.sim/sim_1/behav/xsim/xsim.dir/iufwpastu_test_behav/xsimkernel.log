@@ -1,7 +1,0 @@
-Running: xsim.dir/iufwpastu_test_behav/xsimk -simmode gui -wdb iufwpastu_test_behav.wdb -simrunnum 0 -socket 38513
-Design successfully loaded
-Design Loading Memory Usage: 23552 KB (Peak: 24112 KB)
-Design Loading CPU Usage: 20 ms
-Simulation completed
-Simulation Memory Usage: 113488 KB (Peak: 162820 KB)
-Simulation CPU Usage: 40 ms

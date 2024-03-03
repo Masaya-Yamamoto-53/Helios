@@ -1,9 +1,0 @@
-0.7
-2020.2
-Oct 13 2023
-20:21:30
-/home/masaya/Share/Helios/iu/iucc.vhd,1702721333,vhdl,,,,iucc,,,,,,,,
-/home/masaya/Share/Helios/iu/iucc_pac.vhd,1702583260,vhdl,/home/masaya/Share/Helios/iu/iucc.vhd;/home/masaya/Share/Helios/iu/iucmp.vhd,,,iucc_pac,,,,,,,,
-/home/masaya/Share/Helios/iu/iucmp.vhd,1702730908,vhdl,,,,iucmp,,,,,,,,
-/home/masaya/Share/Helios/iu/iucmp_pac.vhd,1702718067,vhdl,/home/masaya/Share/Helios/iu/iucmp.vhd,,,iucmp_pac,,,,,,,,
-/home/masaya/Share/Helios/iu/testbench/vhd/iucmp_test.vhd,1703949893,vhdl,,,,iucmp_test,,,,,,,,

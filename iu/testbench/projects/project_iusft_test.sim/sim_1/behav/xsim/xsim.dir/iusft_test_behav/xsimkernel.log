@@ -1,7 +1,0 @@
-Running: xsim.dir/iusft_test_behav/xsimk -simmode gui -wdb iusft_test_behav.wdb -simrunnum 0 -socket 43283
-Design successfully loaded
-Design Loading Memory Usage: 23584 KB (Peak: 24132 KB)
-Design Loading CPU Usage: 0 ms
-Simulation completed
-Simulation Memory Usage: 113520 KB (Peak: 162852 KB)
-Simulation CPU Usage: 30 ms

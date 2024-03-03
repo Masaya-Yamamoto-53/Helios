@@ -1,7 +1,0 @@
-Running: xsim.dir/iualu_test_behav/xsimk -simmode gui -wdb iualu_test_behav.wdb -simrunnum 0 -socket 53369
-Design successfully loaded
-Design Loading Memory Usage: 23552 KB (Peak: 24116 KB)
-Design Loading CPU Usage: 20 ms
-Simulation completed
-Simulation Memory Usage: 113488 KB (Peak: 162820 KB)
-Simulation CPU Usage: 340 ms

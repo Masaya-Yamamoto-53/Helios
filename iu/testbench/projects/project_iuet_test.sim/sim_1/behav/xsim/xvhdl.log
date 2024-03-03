@@ -1,5 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iuet_pac.vhd" into library xil_defaultlib
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iuet.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'iuet'
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/testbench/vhd/iuet_test.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'iuet_test'

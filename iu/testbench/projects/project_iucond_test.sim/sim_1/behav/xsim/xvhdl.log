@@ -1,5 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iucond_pac.vhd" into library xil_defaultlib
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/iucond.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'iucond'
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/masaya/Share/Helios/iu/testbench/vhd/iucond_test.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'iucond_test'
