@@ -154,6 +154,7 @@
 </table>
 
 ## Format 1 (fmt = "01"): CALL
+
 <table>
     <tr>
       <th>31</th>
@@ -194,7 +195,9 @@
       <td align="center" colspan="30">disp30</td>
     </tr>
 </table>
+
 ## Format 2 (fmt = "10"): Arithmetic Instruction
+
 <table>
     <tr>
       <th>31</th>
@@ -255,83 +258,141 @@
     <th colspan="6">op3</th>
     <th>mnemonic</th>
     <th>instruction</th>
+    <th colspan="6">op3</th>
+    <th>mnemonic</th>
+    <th>instruction</th>
   </tr>
   <tr>
     <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
     <td>ADD</td>
-    <td></td>
+    <td>Add</td>
+    <td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td>
+    <td colspan="2">unused</td>
   </tr>
   <tr>
     <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td>
     <td>AND</td>
-    <td></td>
+    <td>And</td>
+    <td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td>
+    <td>SLL</td>
+    <td>Shift left logical</td>
   </tr>
   <tr>
     <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td>
     <td>OR</td>
-    <td></td>
+    <td>Inclusive-or</td>
+    <td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td>
+    <td>SRL</td>
+    <td>Shift right logical</td>
   </tr>
   <tr>
     <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td>
     <td>XOR</td>
-    <td></td>
+    <td>Exclusive-or</td>
+    <td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td>
+    <td>SRA</td>
+    <td>Shift right arithmetic</td>
   </tr>
   <tr>
     <td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td>
     <td>SUB</td>
-    <td></td>
+    <td>Subtract</td>
+    <td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td>
+    <td>SEXTB</td>
+    <td>Signed extended byte</td>
   </tr>
   <tr>
     <td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td>
     <td>ANDN</td>
-    <td></td>
+    <td>and not</td>
+    <td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td>
+    <td>SEXTH</td>
+    <td>Signed extended half word</td>
   </tr>
   <tr>
     <td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td>
     <td>ORN</td>
-    <td></td>
+    <td>Inclusive-or not</td>
+    <td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td>
+    <td colspan="2">unused</td>
   </tr>
   <tr>
     <td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td>
     <td>XNOR</td>
-    <td></td>
+    <td>Exclusive-nor</td>
+    <td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td>
+    <td colspan="2">unused</td>
   </tr>
   <tr>
     <td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td>
     <td>MUL</td>
-    <td></td>
+    <td>Multiply 32-bit integer</td>
+    <td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td>
+    <td>CMPEQ</td>
+    <td>Compare equal</td>
   </tr>
   <tr>
     <td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td>
     <td>UMULH</td>
-    <td></td>
+    <td>Unsigned multiply 32-bit high</td>
+    <td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td>
+    <td colspan="2">unused</td>
   </tr>
   <tr>
     <td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td>
-    <td colspan="2">-</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td>
+    <td>CMPLT</td>
+    <td>Compare signed less than</td>
   </tr>
   <tr>
     <td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td>
-    <td colspan="2">-</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td>
+    <td>CMPLE</td>
+    <td>Compare signed less than or equal</td>
   </tr>
   <tr>
     <td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td>
-    <td colspan="2">-</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td>
+    <td>CMPNEQ</td>
+    <td>Compare not equal</td>
   </tr>
   <tr>
     <td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td>
-    <td colspan="2">-</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td>
+    <td colspan="2">unused</td>
   </tr>
   <tr>
     <td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td>
-    <td colspan="2">-</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td>
+    <td>CMPLTU</td>
+    <td>Compare unsigned less than</td>
   </tr>
   <tr>
     <td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td>
-    <td colspan="2">-</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+    <td>CMPLEU</td>
+    <td>Compare unsigned less than or equal</td>
+  </tr>
+  <tr>
+    <td colspan="8"> </td>
+    <td>1</td><td>0</td><td colspan="4"> </td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td colspan="8"> </td>
+    <td>1</td><td>1</td><td colspan="4"> </td>
+    <td colspan="2">unused</td>
   </tr>
 </table>
+
 ## Format 3 (fmt = "11"): Load/Store Instruction
+
 <table>
     <tr>
       <th>31</th>
@@ -385,3 +446,239 @@
       <td align="center" colspan="13">simm13</td>
     </tr>
 </table>
+<table>
+  <tr>
+    <th colspan="6">op3</th>
+    <th>mnemonic</th>
+    <th>instruction</th>
+    <th colspan="6">op3</th>
+    <th>mnemonic</th>
+    <th>instruction</th>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+    <td>LDUB</td>
+    <td>Load unsigned byte</td>
+    <td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td>
+    <td>JMPL</td>
+    <td>Jump and link</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td>
+    <td>LDUH</td>
+    <td>Load unsigned half word</td>
+    <td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td>
+    <td>RETT</td>
+    <td>Return from trap</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td>
+    <td>LD</td>
+    <td>Load</td>
+    <td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td>
+    <td>LDSB</td>
+    <td>Load signed byte</td>
+    <td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td>
+    <td>PRRD†</td>
+    <td>Read processor register</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td>
+    <td>LDSH</td>
+    <td>Load signed half word</td>
+    <td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td>
+    <td>PRWR†</td>
+    <td>Write processor register</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td>
+    <td>ET_W†</td>
+    <td>Write enable trap</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td>
+    <td>PIL_W†</td>
+    <td>Write Processor Interrupt Level</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td>
+    <td>STB</td>
+    <td>Store byte</td>
+    <td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td>
+    <td>STH</td>
+    <td>Store half word</td>
+    <td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td>
+    <td>ST</td>
+    <td>Store</td>
+    <td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+    <td colspan="2">unused</td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <th colspan="6">op3</th>
+    <th>mnemonic</th>
+    <th>instruction</th>
+    <th colspan="6">op3</th>
+    <th>mnemonic</th>
+    <th>instruction</th>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+    <td>LDUB†</td>
+    <td>Load unsigned byte</td>
+    <td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td>
+    <td>LDUH†</td>
+    <td>Load unsigned half word</td>
+    <td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td>
+    <td>LD†</td>
+    <td>Load</td>
+    <td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td>
+    <td>LDSB†</td>
+    <td>Load signed byte</td>
+    <td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td>
+    <td>LDSH†</td>
+    <td>Load signed half word</td>
+    <td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td>
+    <td>STB†</td>
+    <td>Store byte</td>
+    <td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td>
+    <td>STH†</td>
+    <td>Store half word</td>
+    <td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td>
+    <td>ST†</td>
+    <td>Store</td>
+    <td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td>
+    <td colspan="2">unused</td>
+  </tr>
+  <tr>
+    <td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td>
+    <td colspan="2">unused</td>
+    <td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+    <td colspan="2">unused</td>
+  </tr>
+</table>
+
+† Privileged instruction
