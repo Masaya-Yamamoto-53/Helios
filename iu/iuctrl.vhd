@@ -89,7 +89,7 @@ architecture rtl of iuctrl is
     -- |   op3<4:0>   | Mnemonic |                               |   op3<4:0>   | Mnemonic |                                     |
     -- +--+--+--+--+--+----------+-------------------------------+--+--+--+--+--+----------+-------------------------------------+
     -- | 0| 0| 0| 0| 0| ADD      | Add                           | 1| 0| 0| 0| 0| -        |                                     |
-    -- | 0| 0| 0| 0| 1| AND      | And                           | 1| 0| 0| 0| 1| SLL      | Shift left Logical                  |
+    -- | 0| 0| 0| 0| 1| AND      | And                           | 1| 0| 0| 0| 1| SLL      | Shift left logical                  |
     -- | 0| 0| 0| 1| 0| OR       | Inclusive-or                  | 1| 0| 0| 1| 0| SRL      | Shift right logical                 |
     -- | 0| 0| 0| 1| 1| XOR      | Exclusive-or                  | 1| 0| 0| 1| 1| SRA      | Shift right arithmetic              |
     -- | 0| 0| 1| 0| 0| SUB      | Subtract                      | 1| 0| 1| 0| 0| SEXTB    | Signed extended byte                |
@@ -99,9 +99,9 @@ architecture rtl of iuctrl is
     -- +--+--+--+--+--+----------+-------------------------------+--+--+--+--+--+----------+-------------------------------------+
     -- | 0| 1| 0| 0| 0| MUL      | Multiply 32-bit integer       | 1| 1| 0| 0| 0| CMPEQ    | Compare equal                       |
     -- | 0| 1| 0| 0| 1| UMULH    | Unsigned multiply 32-bit high | 1| 1| 0| 0| 1| -        |                                     |
-    -- | 0| 1| 0| 1| 0| -        |                               | 1| 1| 0| 1| 0| CMPLT    | Compare less than                   |
+    -- | 0| 1| 0| 1| 0| -        |                               | 1| 1| 0| 1| 0| CMPLT    | Compare signed less than            |
     -- | 0| 1| 0| 1| 1| -        |                               | 1| 1| 0| 1| 1| CMPLE    | Compare signed less than or equal   |
-    -- | 0| 1| 1| 0| 0| -        |                               | 1| 1| 1| 0| 0| CMPNEQ   | Compare signed not equal            |
+    -- | 0| 1| 1| 0| 0| -        |                               | 1| 1| 1| 0| 0| CMPNEQ   | Compare not equal                   |
     -- | 0| 1| 1| 0| 1| -        |                               | 1| 1| 1| 0| 1| -        |                                     |
     -- | 0| 1| 1| 1| 0| -        |                               | 1| 1| 1| 1| 0| CMPLTU   | Compare unsigned less than          |
     -- | 0| 1| 1| 1| 1| -        |                               | 1| 1| 1| 1| 1| CMPLEU   | Compare unsigned less than or equal |
@@ -121,7 +121,7 @@ architecture rtl of iuctrl is
     -- | 0| 0| 1| 1| 1| -        |                               | 1| 0| 1| 1| 1| PIL_W†   | Write Processor Interrupt Level     |
     -- +--+--+--+--+--+----------+-------------------------------+--+--+--+--+--+----------+-------------------------------------+
     -- | 0| 1| 0| 0| 0| STB      | Store byte                    | 1| 1| 0| 0| 0| -        |                                     |
-    -- | 0| 1| 0| 0| 1| STH      | Store helf word               | 1| 1| 0| 0| 1| -        |                                     |
+    -- | 0| 1| 0| 0| 1| STH      | Store half word               | 1| 1| 0| 0| 1| -        |                                     |
     -- | 0| 1| 0| 1| 0| ST       | Store                         | 1| 1| 0| 1| 0| -        |                                     |
     -- | 0| 1| 0| 1| 1| -        |                               | 1| 1| 0| 1| 1| -        |                                     |
     -- | 0| 1| 1| 0| 0| -        |                               | 1| 1| 1| 0| 0| -        |                                     |
