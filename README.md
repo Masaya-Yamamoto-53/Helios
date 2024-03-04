@@ -16,7 +16,7 @@ Refer to the following.
 
 ### Instruction Description
 Refer to the following.
-* [SETHI Instruction](./man/F0_SETHIL.md)
+* [SETHI Instruction](./man/F0_SETHI.md)
 * [Branch Prediction Instruction](./man/F0_BR.md)
 * [Call and Link Instruction](./man/F1_CALL.md)
 
