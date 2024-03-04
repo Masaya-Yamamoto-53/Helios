@@ -19,6 +19,7 @@ Refer to the following.
 * [SETHI Instruction](./man/F0_SETHI.md)
 * [Branch Prediction Instruction](./man/F0_BR.md)
 * [Call and Link Instruction](./man/F1_CALL.md)
+* [Arithmetic and Logical Instruction](./man/F2_Arithmetic_and_Logical.md)
 
 ## Test
 ### 1. Environment

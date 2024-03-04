@@ -1,13 +1,14 @@
 # Branch Prediction Instructions 
-## Description: 
+## Description
 The branch prediction instruction compares the contents of 0 and rs3, and decides whether to branch or not based on the result. Also, if the value of the prediction bit (p bit) is 1, it performs a branch in advance and then performs the comparison. If the value of the prediction bit (p bit) is 0, it performs the comparison without executing the branch. These are used to reduce pipeline hazards. The prediction bit can be assigned arbitrarily by the user.
 
-## Assembly Language Syntax: 
-```
-brcond regrs3, label(address)
-```
+## Assembly Language Syntax
+br<sub>cond</sub>&nbsp;&nbsp;reg<sub>rs3</sub>,&nbsp;&nbsp;_label_  
+br<sub>cond</sub>&nbsp;&nbsp;reg<sub>rs3</sub>,&nbsp;&nbsp;_address_  
 
-## Behavior: 
+_cond_ is either _brlbc_, _brz_, _brlz_, _brlez_, _brlbs_, _brnz_, _brgz_ or _brgez_.
+
+## Behavior
 ```
 brcond: 
     if(p＝1) { 
@@ -31,7 +32,7 @@ brcond:
         pc ← tmp 
     } 
 
-<Trap> 
+Trap:
     None
 ```
 
