@@ -10,8 +10,15 @@ This VHDL code represents a soft-macro CPU adopting the RISC architecture. The C
 * SPARC-like simple instructions
 
 ## Hardware Manual
+### Instruction Formats
 Refer to the following.  
 * [Instruction Formats](./man/Instruction_Formats.md)
+
+### Instruction Description
+Refer to the following.
+* [SETHI Instruction](./man/F0_SETHIL.md)
+* [Branch Prediction Instruction](./man/F0_BR.md)
+* [Call and Link Instruction](./man/F1_CALL.md)
 
 ## Test
 ### 1. Environment
