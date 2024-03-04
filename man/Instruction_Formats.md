@@ -681,4 +681,5 @@
   </tr>
 </table>
 
-† Privileged instruction
+† Privileged instruction  
+Caution: The implementation is incomplete because the handling of privileged instructions is not understood.

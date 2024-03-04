@@ -1,6 +1,25 @@
 # Helios
 This VHDL code represents a soft-macro CPU adopting the RISC architecture. The CPU features a 5-stage pipeline and is designed based on the Harvard architecture, with a fixed 32-bit instruction length and utilizing a SPARC-like instruction format.
 
+# Feature
+* 32-bit RISC architecture
+* Load-store architecture
+* 5-stage pipeline
+* 32-bit fixed instruction length
+* 32 pieces of 32-bit general-purpose registers
+* SPARC-like simple instructions
+
+## Hardware Manual
+### Instruction Formats
+Refer to the following.  
+* [Instruction Formats](./man/Instruction_Formats.md)
+
+### Instruction Description
+Refer to the following.
+* [SETHI Instruction](./man/F0_SETHIL.md)
+* [Branch Prediction Instruction](./man/F0_BR.md)
+* [Call and Link Instruction](./man/F1_CALL.md)
+
 ## Test
 ### 1. Environment
 * Xilinx Vivado 2023.2
