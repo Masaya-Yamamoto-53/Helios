@@ -11,15 +11,20 @@ This VHDL code represents a soft-macro CPU adopting the RISC architecture. The C
 
 ## Hardware Manual
 ### Instruction Formats
-Refer to the following.  
 * [Instruction Formats](./man/Instruction_Formats.md)
 
 ### Instruction Description
-Refer to the following.
 * [SETHI Instruction](./man/F0_SETHI.md)
 * [Branch Prediction Instruction](./man/F0_BR.md)
 * [Call and Link Instruction](./man/F1_CALL.md)
 * [Arithmetic and Logical Instruction](./man/F2_Arithmetic_and_Logical.md)
+* [Multiply Instruction](./man/F2_Multiply.md)
+* [Shift and Sign extension](./man/F2_Shift_and_Sign_extension.md)
+* [Compare](./man/F2_Compare.md)
+
+### Register
+* [General Purpose Register](./man/GPR.md)
+* [Special Purpose Register](./man/SPR.md)
 
 ## Test
 ### 1. Environment

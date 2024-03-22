@@ -3,8 +3,8 @@
 Perform an operation on register rs1 and either register rs2 or a 13-bit signed integer, and assign the result of the operation to register rd. When the i bit is 0, the non-operator treats it as register rs2, and when the i bit is 1, it treats it as a 13-bit signed integer.
 
 ## Assembly Language Syntax
-_opr_&nbsp;&nbsp;reg<sub>rd</sub>,&nbsp;&nbsp;Reg<sub>rs1</sub>,&nbsp;&nbsp;Reg<sub>rs2</sub>  
-_opr_&nbsp;&nbsp;reg<sub>rd</sub>,&nbsp;&nbsp;Reg<sub>rs1</sub>,&nbsp;&nbsp;_simm13_  
+_opr_&nbsp;&nbsp;reg<sub>rd</sub>,&nbsp;&nbsp;reg<sub>rs1</sub>,&nbsp;&nbsp;reg<sub>rs2</sub>  
+_opr_&nbsp;&nbsp;reg<sub>rd</sub>,&nbsp;&nbsp;reg<sub>rs1</sub>,&nbsp;&nbsp;_simm13_  
 
 _opr_ is either _add_, _and_, _or_, _xor_, _sub_, _andn_, _orn_ or _xnor_.
 
